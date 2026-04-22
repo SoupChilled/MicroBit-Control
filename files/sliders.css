@@ -1,0 +1,239 @@
+.generalSwitch_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -84px;
+}
+#generalSwitch{
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+#generalSwitch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.generalSwitch_style{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cccccc;
+    transition: 0.3s;
+    border: 2px solid #ffffff !important;
+    border-radius: 34px;
+    padding: 3px 6px;
+}
+.generalSwitch_style:before{
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 6px;
+    bottom: 3px;
+    background-color: #ffffff;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+input:checked + .generalSwitch_style{
+    background-color: #0f0f0f;
+}
+input:checked + .generalSwitch_style:before{
+    transform: translateX(20px);
+}
+#generalSwitch_text{
+    margin-left: 20px;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+
+
+.lightsSwitch_container, .climatizationSwitch_container{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+}
+#lightsSwitch{
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+#lightsSwitch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.lightsSwitch_style{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cccccc;
+    transition: 0.3s;
+    border: 2px solid #ffffff !important;
+    border-radius: 34px;
+    padding: 3px 6px;
+}
+.lightsSwitch_style:before{
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 6px;
+    bottom: 3px;
+    background-color: #ffffff;
+    transition: 0.3s;
+    border-radius: 50%;
+    transform: var(--before-transform);
+}
+#lightsSwitch_text{
+    margin-left: 10px;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+
+
+#climatizationSwitch{
+    position: relative;
+    width: 60px;
+    height: 34px;
+
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: #cccccc;
+    border-radius: 34px;
+}
+#climatizationSwitch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.climatizationSwitch_style{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cccccc;
+    transition: 0.3s;
+    border: 2px solid #ffffff !important;
+    border-radius: 34px;
+    padding: 3px 6px;
+}
+.climatizationSwitch_style:before{
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 6px;
+    bottom: 3px;
+    background-color: #ffffff;
+    transition: 0.3s;
+    border-radius: 50%;
+    transform: var(--before-transform);
+}
+#climatizationSwitch_text{
+    margin-left: 10px;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+
+/*SLIDER LUCESSSSSSS*/
+#sliderLights_container{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 7px;
+    border-radius: 7px;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 1px 2px 0px #cccccc;
+    transition: .3s ease-in-out;
+}
+#sliderLights{
+    appearance: none;
+    margin: 0;
+    width: 70%;
+    height: 4px;
+    border-radius: 5px;
+    background: #cccccc;
+    outline: none;
+    transition: .2s;
+    transition: opacity .2s;
+}
+#sliderLights::-webkit-slider-thumb{
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+#sliderLights::-webkit-slider-thumb:active{
+    box-shadow: 0px 0px 0px 5px #cccccc;
+    transition: 0.2s ease-in-out;
+}
+#sliderLights_text{
+    margin: 0;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+
+/*SLIDER PISCINAAAAAAA*/
+#sliderPool_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 7px;
+    border-radius: 15px;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 1px 2px 0px #cccccc;
+    transition: .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+#sliderPool{
+    appearance: none;
+    margin: 0;
+    width: 80%;
+    height: 6px;
+    border-radius: 5px;
+    background: #cccccc;
+    outline: none;
+    transition: .2s;
+    transition: opacity .2s;
+}
+#sliderPool::-webkit-slider-thumb{
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+#sliderPool::-webkit-slider-thumb:active{
+    box-shadow: 0px 0px 0px 5px #cccccc;
+    transition: 0.2s ease-in-out;
+}
+#sliderPool_text{
+    margin: 0;
+    color: #ffffff;
+    font-size: 24px;
+}

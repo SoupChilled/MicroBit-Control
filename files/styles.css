@@ -1,0 +1,621 @@
+:root{
+    --dark: #0f0f0f;
+    --before-transform: translateX(0px);
+}
+
+*{
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+label{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+input{
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+    -webkit-touch-callout: none;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--dark);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+}
+
+button{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/*START*/
+#flakeStart{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#flakeStart button{
+    width: 100px;
+    height: 100px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+#flakeStart button:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#flakeStart button:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+.rotate_animation{
+    animation: rotate 7s linear infinite;
+}
+.flakeConnected{
+    border: 2px solid #ffffff !important;
+    padding: 5% 5% 0% 5% !important;
+    border-radius: 50%;
+    scale: 1.2;
+    transition: all .1s ease-in;
+}
+
+
+#screen{
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    max-width: 400px;
+    height: 70px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px #cccccc;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#screen_display{
+    width: 97%;
+    height: 90%;
+    background-color: #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    color: #0f0f0f;
+}
+#screen_text{
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+#main_container{
+    display: none;
+}
+
+/*Menú*/
+#menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fila1, .fila2{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.fila1_switch, .fila2_switch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+
+#gar{
+    width: 90px;
+    height: 90px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#gar:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#gar:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#lights{
+    width: 90px;
+    height: 90px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#lights:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#lights:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#pool{
+    width: 90px;
+    height: 90px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#pool:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#pool:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#climatization{
+    width: 90px;
+    height: 90px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: #cccccc;
+    border-radius: 15px;
+}
+#climatization:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#climatization:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+
+.button_disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: #cccccc;
+    border-radius: 34px;
+}
+
+/*Bottom Controls*/
+#bottom_controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+}
+
+#flakeConnected{
+    display: flex;
+    visibility: hidden;
+}
+#flakeConnected button{
+    width: 45px;
+    height: 45px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+#flakeConnected button:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#flakeConnected button:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#return_container{
+    display: flex;
+    visibility: hidden;
+}
+#return_container button{
+    width: 53px;
+    height: 35px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px #cccccc;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+#return_container button:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#return_container button:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#ig_logo{
+    display: flex;
+    width: 35px;
+    height: 35px;
+}
+#ig_logo:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;   
+}
+#ig_logo:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out; 
+}
+
+/*Menú Lucesssssssssssssss*/
+#menu_lights{
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fila1_menu_lights, .fila2_menu_lights, .fila3_menu_lights{
+    display: flex;
+    gap: 15px;
+    position: relative;
+}
+
+/*Segundo Piso*/
+#second_floor{
+    display: flex;
+    height: 195px;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.fila1_menu_lights2{
+    display: flex;
+    gap: 170px;
+    position: relative;
+}
+.fila2_menu_lights2{
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    top: 74.8px;
+}
+.fila3_menu_lights2{
+    display: flex;
+    gap: 170px;
+    position: relative;
+    top: 30px;
+}
+#floors_text{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+#titles{
+    font-size: 19px;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+#pbed{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#pbed:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#pbed:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#pbath{    
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#pbath:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#pbath:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#bath{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#bath:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#bath:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#stud{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#stud:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#stud:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#bed1{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#bed1:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#bed1:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#bed2{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#bed2:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#bed2:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+/*Primer Piso*/
+#first_floor{
+    display: flex;
+    visibility: visible;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+#ext{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#ext:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#ext:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#liv{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#liv:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#liv:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#kit{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#kit:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#kit:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#pbath2{    
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#pbath2:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#pbath2:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#bath2{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#bath2:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#bath2:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#pbed2{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#pbed2:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#pbed2:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+#laun{
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background-color: #ffffff;
+    border: 7px solid #ffffff !important;
+    border-radius: 15px;
+    padding: 0;
+}
+#laun:hover{
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in-out;
+}
+#laun:active{
+    transform: scale(1.3, 1.3);
+    transition: all .1s ease-in-out;
+}
+
+.selected_button{
+    box-shadow: 0px 0px 30px #c0c0c0;
+}
+
+
+#menu_pool{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    max-width: 400px;
+    height: 70px;
+}
